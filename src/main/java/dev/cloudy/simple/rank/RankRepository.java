@@ -26,7 +26,18 @@ public class RankRepository {
      * Load all the ranks from the enum and initialize them
      */
     private void loadRanks() {
-        Arrays.stream(EnumRanks.values()).forEach(rank -> this.ranks.add(new Rank(rank.name())));
+        Arrays.stream(EnumRanks.values()).forEach(rank ->
+                this.ranks.add(new Rank(
+                        rank.name(),
+                        rank.getPrefix(),
+                        rank.getSuffix(),
+                        rank.getWeight(),
+                        rank.getColor(),
+                        rank.isDefaultRank(),
+                        rank.isStaffRank(),
+                        rank.isDonatorRank())
+                )
+        );
     }
 
     /**
