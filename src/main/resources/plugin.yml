@@ -1,0 +1,3 @@
+name: Simple
+version: '${project.version}'
+main: dev.cloudy.simple.Simple
